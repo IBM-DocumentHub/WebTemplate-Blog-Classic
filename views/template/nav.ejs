@@ -1,0 +1,13 @@
+<!-- Navigation Partial Template -->
+<header class="masthead mb-auto">
+    <div class="inner">
+        <h3 class="masthead-brand"><a class="navbar-brand tm-site-name" href="/"><%= nav.catalog.info.title %> </a></h3>
+
+        <nav class="nav nav-masthead justify-content-center">
+            <a id="home" class="nav-link" href="/">Home</a>
+            <% for(let n of nav.navigation) { %>
+                <a id="<%=n.id%>"" class="nav-link" href="/page/<%=n.id%>"><%=n.name%></a>
+            <% } %>
+        </nav>
+    </div>
+</header>

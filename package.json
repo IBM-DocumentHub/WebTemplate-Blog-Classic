@@ -1,0 +1,30 @@
+{
+	"name": "Demo-Blog",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"devstart": "nodemon index.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"push-to-prod": "ibmcloud cf push webtemplate-blog-classic",
+		"login": "ibmcloud login --sso",
+		"target": "ibmcloud target -o labdocs -s dev",
+		"deploy": "npm run target && npm run push-to-prod"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"documenthub": "0.0.25",
+		"ejs": "^3.0.1",
+		"express": "^4.17.1",
+		"nodemon": "^2.0.2",
+		"showdown": "^1.9.1"
+	},
+	"engines": {
+		"node": ">=12.11.1",
+		"npm": ">=6.4.1"
+	}
+}

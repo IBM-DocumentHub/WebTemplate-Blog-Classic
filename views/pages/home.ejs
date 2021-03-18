@@ -1,0 +1,42 @@
+<%- include('../template/head')-%>
+
+<body class="text-center">
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+		<%- include('../template/nav')-%>
+
+        <p>&nbsp;</p>
+
+        <div class="tm-home-img-container">
+            <img src="<%= catalog.attachmentsBaseUrl + "/" + catalog.info.header%>" alt="Image" class="hidden-lg-up img-fluid">
+        </div>
+
+		<main role="main" class="inner cover">
+			<div class="container container-left">
+                <div class="row">
+                    <% for(let d of documents) {%>
+                        <div class="col-6 col-md-2">
+                            <a href="<%= "/post/" + d.catalog.document.documentId%>">
+                                <div class="demo-blog-img" style="background-image: url('<%=`${d.attachmentsBaseUrl}/${d.document.image}` %>');"></div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-10 post-listing-body">
+                            <h3>
+                                <a href="<%= "/post/" + d.catalog.document.documentId%>"><%=d.document.title%></a>
+                            </h3>
+                            <p>
+                                <%=d.document.author?("Written by " + d.document.author + " | ") : ""%>
+                                <%=d.document.date%>
+                            </p>
+                            <p><%=d.document.description%></p>
+                            <p><a href="<%= "/post/" + d.catalog.document.documentId%>" class="btn-custom">Read More ><span class="ion-ios-arrow-forward"></span></a></p>
+                        </div>
+                    <%}%>
+                </div>
+			</div>
+        </main>
+        <%- include('../template/footer')-%>
+    </div>
+</body>
+
+</html>

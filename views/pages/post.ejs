@@ -1,0 +1,21 @@
+<%- include('../template/head')-%>
+
+<body class="text-center">
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<%- include('../template/nav')-%>
+		<main role="main" class="inner cover">
+			<h1 class="cover-heading"></h1>
+			<div class="container container-left">
+				<h1><%=document.document.title%></h1>
+				<p>
+					<%=document.document.author?("Written by " + document.document.author + " | ") : ""%>
+					<%=document.document.date%>
+				</p>
+				<div><%-content%></div>
+			</div>
+		</main>
+		<%- include('../template/footer')-%>
+	</div>
+</body>
+
+</html>
